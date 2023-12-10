@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// Import jQuery, Popper.js, and Bootstrap JavaScript
 import 'jquery/dist/jquery.slim.min';
 import 'popper.js/dist/umd/popper.min';
 import 'bootstrap/dist/js/bootstrap.min';

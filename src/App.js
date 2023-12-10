@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -20,7 +19,6 @@ function App() {
     { name: 'Aland Islands', flag: `${process.env.PUBLIC_URL}/assets/img/ax.svg`, population: 28875, region: 'Europe', capital: 'Mariehamn' },
     { name: 'Albania', flag: `${process.env.PUBLIC_URL}/assets/img/al.svg`, population: 2886026, region: 'Europe', capital: 'Tirana' },
     { name: 'Algeria', flag: `${process.env.PUBLIC_URL}/assets/img/dz.svg`, population: 40400000, region: 'Africa', capital: 'Algiers' },
-    // Add more countries as needed
   ];
 
 
@@ -30,14 +28,14 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  // Placeholder function for demonstration
+ 
   const handleSearch = (s) => {
-    // ... handle search logic
+    
   };
 
-  // Placeholder function for demonstration
+  
   const handleFilterChange = (r) => {
-    // ... handle filter logic
+    
   };
 
   return (
