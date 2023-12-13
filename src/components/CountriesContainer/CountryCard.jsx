@@ -23,7 +23,6 @@ const CountryCard = ({ country }) => {
         </div>
       </div>
     </div>
-    
   );
 };
 

@@ -1,19 +1,17 @@
+// src/components/CountryInfo/BackButton.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import './country.css'
 const BackButton = () => {
+
   return (
-    <section className="searchbar">
-      <div className="d-flex justify-content-between container">
-        <Link to="/">
-          <div className="search-container">
-            <span className="button-back">
-              <i className="fa-solid fa-arrow-left"></i>
-              <span className="button-space">Back</span>
-            </span>
-          </div>
-        </Link>
-      </div>
+    <section class="searchbar">
+        <div class="d-flex justify-content-between container">
+            <a href="/">
+                <div class="search-container">
+                    <span class="button-back"><i class="fa-solid fa-arrow-left"></i><span class="button-space">Back</span></span>
+                </div>
+            </a>
+        </div>
     </section>
   );
 };
