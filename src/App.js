@@ -4,7 +4,7 @@ import './App.css';
 import HomePage from './pages/home.jsx';
 import About from './pages/countryDetails.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// Import jQuery, Popper.js, and Bootstrap JavaScript
+// Import jQuery, and Bootstrap JavaScript
 import 'jquery/dist/jquery.slim.min';
 import 'bootstrap/dist/js/bootstrap.min';
 function App() {
