@@ -1,0 +1,50 @@
+.favourite {
+    width: 28.125rem;
+    background-color: var(--light2);
+    padding: 1.25rem;
+}
+
+.favoritetitle h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+.countriesInfo ::-webkit-scrollbar {
+    width: 0.625rem;
+    background-color: #f1f1f1;
+}
+
+.countriesInfo ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 0.313rem;
+}
+
+.countriesInfo ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.scrollbar {
+    overflow-y: auto;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+
+.favicons {
+    height: 95%;
+}
+
+.btn {
+    --bs-btn-padding-x: 0.438rem !important; /* 7px */
+    --bs-btn-padding-y: 0.125rem !important; /* 2px */
+}
+
+.remove-button {
+    text-decoration: none !important;
+    background-color: var(--light1) !important;
+    color: var(--black) !important;
+    font-weight: 600 !important;
+    border-radius: 50% !important;
+}

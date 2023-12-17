@@ -1,0 +1,53 @@
+.card {
+    background-color: var(--light2) !important;
+    color: var(--black) !important;
+    margin-bottom: 60px;
+    width: 100%;
+    height: 23rem !important;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color) !important;
+}
+
+.card-body h2, a {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--black)  !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-title {
+    white-space: nowrap !important; 
+    overflow: hidden !important;
+    padding-bottom: 15px;
+}
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.clickcountry {
+    height: 50%;
+}
+
+.countriesInfo .container {
+    width: 100%;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 16px;
+}
+.row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+.row>* {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}

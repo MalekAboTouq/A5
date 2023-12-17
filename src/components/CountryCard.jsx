@@ -1,9 +1,13 @@
 import React from 'react';
-
+import './mediaquery/mediaquery.css';
+import '../components/Card/card.css';
 const CountryCard = ({ country }) => {
+
+  
+
   return (
-    <div className="col-lg-3">
-      <div className="card">
+    <div className="col-lg-3" >
+      <div className="card" >
         <a href={`/About`} className="card-img-top clickcountry">
           <img src={country.flag} style={{ height: '100%', width: '100%', objectFit: 'cover' }} alt={country.name} />
         </a>
@@ -23,7 +27,6 @@ const CountryCard = ({ country }) => {
         </div>
       </div>
     </div>
-    
   );
 };
 

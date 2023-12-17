@@ -1,0 +1,107 @@
+/* mediaquery.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,800&display=swap');
+
+:root {
+  --light1: #fafafa;
+  --light2: #ffffff;
+  --background-dark: #202c37;
+  --text-dark: #858585;
+  --black: black;
+  --white: white;
+  /* --palceholder: black; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container {
+  margin: auto;
+  padding: 0;
+}
+
+/* ... other styles ... */
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
+.searchbar {
+  padding: 40px 0 !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.navbar {
+  color: var(--black);
+  border: none;
+}
+.searchbar .container {
+  padding: 40px 0px;
+}
+.form-inline {
+  /* styles for inline form */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.input-group {
+  /* styles for the input group */
+  background-color: var(--light2);
+}
+
+
+
+.input-group input::placeholder {
+  color: var(--palceholder);
+}
+
+
+
+
+
+
+
+
+.search-container {
+  /* styles for the search container */
+  padding: 0 !important;
+  background-color: var(--light2) !important;
+  color: var(--black) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.search-container button {
+  /* styles for the search button */
+  background-color: var(--light2);
+  padding: 20px 25px 20px 25px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.form-control {
+  /* styles for the form control input */
+  color: var(--black) !important;
+  border: none !important;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 2px !important;
+  padding-right: 18vw !important;
+  background-color: var(--light2) !important;
+}
+
+.dropdown {
+  /* styles for the dropdown */
+  display: flex;
+  height: 75px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}

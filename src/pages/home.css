@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,800&display=swap');
+
+:root {
+    --light1: #fafafa;
+    --light2: #ffffff;
+    --background-dark: #202c37;
+    --text-dark: #858585;
+    --black: black;
+    --white: white;
+    /* --palceholder: black; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none  !important;
+}
+
+.container {
+    margin: auto;
+    padding: 0;
+}
+
+/* .row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+
+body {
+    background-color: var(--light1) !important;
+    color: var(--black) !important;
+    font-family: 'Nunito Sans', sans-serif !important;
+    transition: background-color 0.3s, color 0.3s !important;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    --light2: #2b3945;
+    --light1: #202c37;
+    --background-dark: #121212;
+    --text-dark: #ffffff;
+    --black: var(--white);
+    --placeholder:#fff;
+}
+
+
+.header button {
+    border: none;
+    background-color: var(--light2);
+}
+
+.header {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  height: 20%;
+  background-color: var(--light2);
+  padding: 20px 0 20px 0;
+  font-weight: 800;
+  color: var(--black);
+}
+.fa-regular, .far {
+  color: var(--black);
+}
+.header .container {
+  margin: auto;
+  align-items: center;
+}
+
+.icon-text {
+    margin-left: 8px;
+    color: var(--black);
+}
+
+.filter {
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+    background-color: var(--light2);
+    border-radius: 5px;
+}
+
+.select-wrap {
+    background-color: var(--light1);
+    border-radius: 5px;
+}
+
+.search input[type=text] {
+    float: right;
+    padding: 20px 15vw 20px 0;
+    font-size: 17px;
+    border: none;
+}
+
+/* .search-container {
+    padding: 0 !important;
+    background-color: var(--light2) !important;
+    color: var(--black) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) ;
+} */
+
+.search-container button {
+    background-color: var(--light2);
+    padding: 20px 25px 20px 25px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.clickcountry{
+    height: 50%;
+}
+.cuntriesInfo .container {
+    width: 100%;
+}
+
+.card-body h2, a {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--black)  !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-title {
+    white-space: nowrap !important; 
+    overflow: hidden !important;
+    padding-bottom: 15px;
+}
+
+
+
+.card-body p {
+    padding-bottom: 0.3rem;
+    margin: 0;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+a#dropdownMenuLink {
+    background-color: var(--light2);
+    color: black;
+    border: 0;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    padding: 20px 30px 20px 30px;
+}
+
+.dropdown-toggle::after {
+    margin-left: 1.255em;
+}
+
+.dropdown-menu {
+    width: -webkit-fill-available;
+    border: none;
+    margin-top: 10px !important;
+    border-radius: 2px;
+    background-color: var(--light2) !important;
+}
+
+.dropdown .btn {
+    color: var(--black);
+}
+
+.dropdown-menu a {
+    color: var(--black);
+}
+
+button#dropdownMenuButton {
+    background-color: var(--light2);
+    color: var(--black);
+    border: none;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    padding: 20px 30px 20px 30px;
+}
+
+.navbar {
+    color: var(--black);
+    border: none;
+}
+
+
+
+.container .text-left {
+    width: auto;
+}
+
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.row>* {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+@media (min-width: 0px){
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: auto !important;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 992px){
+.row-cols-lg-3>* {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+}

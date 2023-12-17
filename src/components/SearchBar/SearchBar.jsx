@@ -2,6 +2,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import '../mediaquery/mediaquery.css'
+import './SearchBar.css'
 const SearchBar = () => {
   return (
     <section className="searchbar container">

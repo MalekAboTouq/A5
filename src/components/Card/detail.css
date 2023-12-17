@@ -1,0 +1,358 @@
+
+.footer {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.flag-info {
+    margin-top: 20px;
+}
+
+.flag-info .container {
+    padding: 0;
+}
+
+
+.description {
+    width: 100% !important;
+    margin-top: 30px;
+    padding-left: 60px;
+    padding-bottom: 50px;
+}
+.description h1 {
+    margin-bottom: 30px;
+    margin-left: -2px;
+}
+.description p {
+    margin-bottom: 10px;
+}
+.description .bold {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+}
+
+
+/* .card {
+    max-width: 100% !important;
+    background-color: var(--light1) !important;
+    color: var(--black) !important;
+    border: none  !important;
+    
+} */
+
+.row-col-1 {
+    flex-direction: column;
+}
+
+.row-cols-md-2 {
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    width: 100%;
+}
+
+.col-md-8 {
+    width: 100%;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 0;
+}
+
+
+
+.description h1 {
+    margin-bottom: 30px;
+    margin-left: -2px;
+}
+
+.country-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.country-info .col {
+    width: 50%;
+}
+
+.border-countries {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.border-box {
+    padding: 5px 25px;
+    background-color: var(--background);
+    margin-right: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    color: var(--black);
+}
+
+.bold {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+}
+
+.move {
+    margin-left: 8px;
+    color: var(--black);
+}
+
+
+.row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+
+
+@media (min-width: 768px){
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+}
+@media (max-width: 576px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    .header h1 {
+        font-size: 16px;
+    }
+
+    .icon-text {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .border-contries .border-box {
+        padding: 5px 10px;
+        background-color: var(--background);
+        margin-right: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        color: var(--black);
+        font-size: 14px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col-md-4 {
+        width: 100%;
+    }
+
+    .col-md-4 img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-flag {
+        width: 100%;
+    }
+
+    .col-md-8 {
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .row-cols-2>* {
+        flex: 0 0 auto;
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .border-contries {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .border-contries .bold {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .icon-text {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .border-contries .border-box {
+        padding: 5px 25px;
+        background-color: var(--background);
+        margin-right: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        color: var(--black);
+        font-size: 14px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col-md-4 {
+        width: 100% !important;
+    }
+
+    .col-md-4 img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-flag {
+        width: 100%;
+    }
+
+    .col-md-8 {
+        width: 100% !important;
+    }
+
+    .description {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .row-cols-2>* {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-bottom: 40px;
+    }
+
+    .border-contries {
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+    }
+
+    .border-contries .bold {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .country-info .col {
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    /* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    } */
+
+    .icon-text {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .border-contries .border-box {
+        padding: 5px 25px;
+        background-color: var(--background);
+        margin-right: 10px;
+        border-radius: 4px;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        color: var(--black);
+        font-size: 14px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col-md-4 {
+        width: 50% !important;
+    }
+
+    .col-md-4 img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-flag {
+        width: 100%;
+    }
+
+    .col-md-8 {
+        width: 50% !important;
+    }
+
+    .description {
+        width: 100% !important;
+        padding-left: 0;
+        padding-bottom: 0px;
+    }
+
+    .row-cols-2>* {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-bottom: 40px;
+    }
+
+    .border-contries {
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+    }
+
+    .border-contries .bold {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .country-info .col {
+        width: 50%;
+    }
+
+
+    .col-lg-3{
+        padding-left: 50px;
+    }
+}

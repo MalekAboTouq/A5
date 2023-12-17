@@ -1,0 +1,35 @@
+.searchbar {
+    padding: 40px 0;
+}
+
+.searchbar .container {
+    display: flex;
+    justify-content: between;
+    padding:0%;
+}
+
+.search-container {
+    padding: 10px 50px !important;
+    background-color: var(--light2) !important;
+    color: var(--black) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.button-back {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-space {
+    padding-left: 15px;
+}
+
+.button-back i {
+    margin-right: 5px;
+}
+
+.search-container a {
+    color: var(--black);
+}
