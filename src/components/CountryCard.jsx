@@ -3,17 +3,21 @@ import './mediaquery/mediaquery.css';
 import '../components/Card/card.css';
 const CountryCard = ({ country }) => {
 
-  
+  const { common } = country.name;
+
+  const handleDragStart = (event) => {
+    event.dataTransfer.setData('text/plain', JSON.stringify(country));
+  };
 
   return (
-    <div className="col-lg-3" >
+    <div className="col-lg-3" draggable onDragStart={handleDragStart}>
       <div className="card" >
         <a href={`/About`} className="card-img-top clickcountry">
-          <img src={country.flag} style={{ height: '100%', width: '100%', objectFit: 'cover' }} alt={country.name} />
+          <img src={country.flags.svg} style={{ height: '100%', width: '100%', objectFit: 'cover' }} alt={country.name} />
         </a>
         <div className="card-body">
           <h2 className="card-title text-truncate">
-            <a href={`/About`}>{country.name}</a>
+            <a href={`/About`}>{common}</a>
           </h2>
           <p className="card-text text-truncate">
             <span className="bold">Population:</span> {country.population}
