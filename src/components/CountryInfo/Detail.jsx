@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Card/detail.css'
 import styled from 'styled-components';
-const CountryInfo = () => {
+const CountryInfo = ( {country} ) => {
 
   
   const StyledDetailCard = styled.div`
@@ -10,11 +10,12 @@ const CountryInfo = () => {
     color: var(--black) !important;
     border: none !important;
   `;
+  // {country.name.common}
 
   return (
     <footer class="flag-info">
         <div class="container text-left">
-            <div class="card mb-3" style={{ maxWidth: '100%',StyledDetailCard }} >
+            <div class="card1 mb-3" style={{ maxWidth: '100%',StyledDetailCard }} >
                 <div class="row g-0 row-col-1 row-cols-md-2">
                     <div class="col-md-4">
                         <img src="/assets/img/de.svg" alt="Country Flag" class="img-fluid" id="countryFlag" />
@@ -23,12 +24,12 @@ const CountryInfo = () => {
                         <div class="card-body">
                             <div class="description col-lg-3 col-md-12">
                                 <div class="row">
-                                    <h1 id="countryName">Belgium</h1>
+                                    <h1 id="countryName" style = {{width: 'auto'}}>Belgium</h1>
                                 </div>
                                 <div class="text-left">
                                 <div class="row row-cols-2 country-info">
                                     <div class="col">
-                                      <p><span class="bold">Native Name:</span> Belgie</p>
+                                      <p><span class="bold">Native Name:</span> </p>
                                       <p><span class="bold">Population:</span> 11,319,511</p>
                                       <p><span class="bold">Region:</span> Europe</p>
                                       <p><span class="bold">Sub Region:</span> Western Europe</p>

@@ -48,6 +48,12 @@
 
 }
 @media (max-width: 576px){
+    .data-mdb-perfect-scrollbar-init{
+        display: none;
+    }
+    .favorite{
+        display: none !important;
+    }
     .d-flex {
         display: flex!important;
         flex-wrap: wrap;
@@ -71,8 +77,21 @@
         margin-bottom: 45px;
 
     }
+    .row-cols-2>* {
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
     .col-lg-3 {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 100%;
+        padding-right: 0;
     }
 }

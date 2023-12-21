@@ -48,3 +48,9 @@
     font-weight: 600 !important;
     border-radius: 50% !important;
 }
+@media (max-width: 576px){
+    .favourite {
+       display: none;
+    }
+
+}

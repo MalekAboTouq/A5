@@ -15,7 +15,7 @@
 
 .description {
     width: 100% !important;
-    margin-top: 30px;
+    margin-top: 60px;
     padding-left: 60px;
     padding-bottom: 50px;
 }
@@ -32,13 +32,13 @@
 }
 
 
-/* .card {
+.card1 {
     max-width: 100% !important;
     background-color: var(--light1) !important;
     color: var(--black) !important;
     border: none  !important;
     
-} */
+}
 
 .row-col-1 {
     flex-direction: column;

@@ -77,8 +77,13 @@ body.dark-mode {
     color: var(--black);
 }
 
+
+.navbar{
+    padding: 0 !important;
+}
+
 .search-container {
-    padding: 0px 0px !important;
+    padding: 5px 0px !important;
     background-color: var(--light2) !important;
     color: var(--black) !important;
     border-radius: 10px !important;

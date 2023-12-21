@@ -1,15 +1,15 @@
-.searchbar {
+.button {
     padding: 40px 0;
 }
 
-.searchbar .container {
+.button .container {
     display: flex;
     justify-content: between;
     padding:0%;
 }
 
-.search-container {
-    padding: 10px 50px !important;
+.button-container {
+    padding: 20px 50px !important;
     background-color: var(--light2) !important;
     color: var(--black) !important;
     border-radius: 10px !important;
@@ -30,6 +30,6 @@
     margin-right: 5px;
 }
 
-.search-container a {
+.button-container a {
     color: var(--black);
 }

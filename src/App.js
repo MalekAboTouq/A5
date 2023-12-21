@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import HomePage from './pages/home.jsx';
-import About from './pages/countryDetails.jsx';
-import NotFoundPage from './pages/404.jsx';
+import HomePage from './pages/Home/home.jsx';
+import About from './pages/Details/countryDetails.jsx';
+import NotFoundPage from './pages/404/404.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
             element={<HomePage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
           />
           <Route
-            path="/About"
+            path="/About/:countryName"
             element={<About darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
           />
           {/*Redirect to 404 page if the route doesn't match*/}
