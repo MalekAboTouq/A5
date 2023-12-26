@@ -10,7 +10,10 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-
+.favourite.drag-over {
+    border: 2px dashed #27ae60;
+}
+  
 .countriesInfo ::-webkit-scrollbar {
     width: 0.625rem;
     background-color: #f1f1f1;

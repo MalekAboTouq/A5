@@ -19,7 +19,7 @@ const Header = ({ toggleDarkMode }) => {
 
   return (
     <header className="header">
-      <div className="d-flex justify-content-between container">
+      <div className="d-flex justify-content-between container" style={{display:'flex',flexWrap:'nowrap'}}>
         <h1>Where in the world?</h1>
         <button id="darkModeToggle">
           <i className="fa-regular fa-moon"></i>

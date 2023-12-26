@@ -10,57 +10,69 @@ const CountryInfo = ( {country} ) => {
     color: var(--black) !important;
     border: none !important;
   `;
-  // {country.name.common}
 
   return (
-    <footer class="flag-info">
-        <div class="container text-left">
-            <div class="card1 mb-3" style={{ maxWidth: '100%',StyledDetailCard }} >
-                <div class="row g-0 row-col-1 row-cols-md-2">
-                    <div class="col-md-4">
-                        <img src="/assets/img/de.svg" alt="Country Flag" class="img-fluid" id="countryFlag" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <div class="description col-lg-3 col-md-12">
-                                <div class="row">
-                                    <h1 id="countryName" style = {{width: 'auto'}}>Belgium</h1>
-                                </div>
-                                <div class="text-left">
-                                <div class="row row-cols-2 country-info">
-                                    <div class="col">
-                                      <p><span class="bold">Native Name:</span> </p>
-                                      <p><span class="bold">Population:</span> 11,319,511</p>
-                                      <p><span class="bold">Region:</span> Europe</p>
-                                      <p><span class="bold">Sub Region:</span> Western Europe</p>
-                                      <p><span class="bold">Capital:</span> Brussels</p>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <p><span class="bold">Top Level Domain:</span> .be</p>
-                                      <p><span class="bold">Currencies:</span> Euro</p>
-                                      <p><span class="bold">Languages:</span> Dutch, French</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="border-countries">
-                                          <p><span class="bold">Border Countries:</span></p><div class="move">
-                                              <span id="borderCountries">
-                                                <span class="border-box">France</span>
-                                                <span class="border-box">Germany</span>
-                                                <span class="border-box">Netherlands</span>
-                                              </span>
-                                          </div>
-                                          <p></p>
-                                      </div>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <footer className="flag-info">
+  <div className="container text-left">
+    <div className="card1 mb-3" style={{ maxWidth: '100%', StyledDetailCard }}>
+      <div className="row g-0 row-col-1 row-cols-md-2">
+        <div className="col-md-4">
+          <img src={country?.flags?.png} alt="Country Flag" className="img-fluid" id="countryFlag" />
         </div>
-    </footer>
+        <div className="col-md-8">
+          <div className="card-body">
+            <div className="description col-lg-3 col-md-12">
+              <div className="row">
+                <h1 id="countryName" style={{ width: 'auto' }}>{country?.name?.common}</h1>
+              </div>
+              <div className="text-left">
+                <div className="row row-cols-2 country-info">
+                  <div className="col">
+                    <p><span className="bold">Native Name:</span> {country?.name?.common} </p>
+                    <p><span className="bold">Population:</span> {country?.population}</p>
+                    <p><span className="bold">Region:</span> {country?.region}</p>
+                    <p><span className="bold">Sub Region:</span> {country?.subregion}</p>
+                    <p><span className="bold">Capital:</span> {country?.capital}</p>
+                  </div>
+                  <div className="col">
+                    <p><span className="bold">Top Level Domain:</span> {country?.tld}</p>
+                    <p><span className="bold">Currencies:</span>
+                      {Object.keys(country?.currencies || {}).map((currencyCode, index, array) => (
+                        <span key={currencyCode}>{country.currencies[currencyCode].name}{index < array.length - 1 && ', '}</span>
+                      ))}
+                    </p>
+                    <p><span className="bold">Languages:</span> {Object.values(country?.languages || {}).join(', ')}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="border-countries">
+                  <p><span className="bold">Border Countries:</span></p>
+                  <div className="move">
+                    <span id="borderCountries" className="borderCountries">
+                      {country?.borders?.length > 0 ? (
+                        country.borders.map((borderCode, index) => (
+                          <span className="border-box" key={index}>
+                            {borderCode}
+                          </span>
+                        ))
+                      ) : (
+                        <span>No border countries</span>
+                      )}
+                    </span>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
   );
 };
 

@@ -48,6 +48,12 @@
 
 }
 @media (max-width: 576px){
+    .navbar{
+        margin-bottom: 20px;
+    }
+    .header h1{
+        font-size: 14px;
+    }
     .data-mdb-perfect-scrollbar-init{
         display: none;
     }

@@ -149,7 +149,7 @@ body.dark-mode {
 } */
 .row-cols-2>* {
     flex: 0 0 auto !important;
-    width: 50% !important;
+    width: 50% ;
 }
 
 .card-body {
