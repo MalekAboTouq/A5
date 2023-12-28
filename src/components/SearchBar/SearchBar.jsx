@@ -1,13 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import '../mediaquery/mediaquery.css';
 import './SearchBar.css';
+import RegionDropdown from '../RegionDropdown/RegionDropdown.jsx';
 
 const SearchBar = ({ handleFilterChange, handleSearch }) => {
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const filterNames = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'Favorites'];
 
   const handleRegionChange = (region) => {
     setSelectedRegion(region);
@@ -18,8 +20,6 @@ const SearchBar = ({ handleFilterChange, handleSearch }) => {
     const query = e.target.value;
     setSearchQuery(query);
     handleSearch(query);
-
-    
   };
 
   const handleSubmit = (e) => {
@@ -53,39 +53,12 @@ const SearchBar = ({ handleFilterChange, handleSearch }) => {
             </div>
           </form>
         </nav>
-        <div className="dropdown">
-          <button
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-          >
-            {selectedRegion === 'Favorites' ? 'Favorites' : `Filter by ${selectedRegion}`}
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" onClick={() => handleRegionChange('All')}>
-              All
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Africa')}>
-              Africa
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Americas')}>
-              America
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Asia')}>
-              Asia
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Europe')}>
-              Europe
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Oceania')}>
-              Oceania
-            </a>
-            <a className="dropdown-item" onClick={() => handleRegionChange('Favorites')}>
-              Favorites
-            </a>
-          </div>
-        </div>
+        {/* Use the RegionDropdown component here */}
+        <RegionDropdown
+          selectedRegion={selectedRegion}
+          handleRegionChange={handleRegionChange}
+          filterNames={filterNames}
+        />
       </div>
     </section>
   );
