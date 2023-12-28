@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './pages/Home/home.jsx';
 import About from './pages/Details/countryDetails.jsx';
 import NotFoundPage from './pages/404/404.jsx';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route
             path="/"
@@ -34,14 +34,14 @@ function App() {
             path="/About/:countryName"
             element={<About darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
           />
-          {/*Redirect to 404 page if the route doesn't match*/}
+          {/* Redirect to 404 page if the route doesn't match */}
           <Route
             path="*"
             element={<Navigate to="/404" />}
           />
           <Route path="/404" element={<NotFoundPage />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
