@@ -13,9 +13,9 @@ const RegionDropdown = ({ selectedRegion, handleRegionChange, filterNames }) => 
       </button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {filterNames.map((filter) => (
-          <a key={filter} className="dropdown-item" onClick={() => handleRegionChange(filter)}>
+          <button key={filter} className="dropdown-item" onClick={() => handleRegionChange(filter)}>
             {filter}
-          </a>
+          </button>
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef  } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import SearchBar from '../../components/SearchBar/SearchBar.jsx';
 import CountryCard from '../../components/CountryCard.jsx';
@@ -7,17 +7,6 @@ import { fetchCountries } from '../../Api/apifetch.js';
 import Favorites from '../../components/Favorites/favorites.jsx';
 
 import '../Home/home.css';
-
-const fetchData = async () => {
-  try {
-    // Fetch countries data
-    const data = await fetchCountries();
-    return data;
-  } catch (error) {
-    console.error('Error fetching countries:', error);
-    throw error; // Propagate the error
-  }
-};
 
 function HomePage({ darkMode, toggleDarkMode }) {
   const [countriesData, setCountriesData] = useState([]);
@@ -51,6 +40,7 @@ function HomePage({ darkMode, toggleDarkMode }) {
   };
 
   const handleSearch = async (query) => {
+    //Clear existing timeout if it exists
     clearTimeout(searchTimeoutRef.current);
 
     searchTimeoutRef.current = setTimeout(async () => {
@@ -64,19 +54,15 @@ function HomePage({ darkMode, toggleDarkMode }) {
           const response = await fetch(`https://restcountries.com/v3.1/name/${query}`);
           searchData = await response.json();
         }
-
         // Filter countries by region
         const filteredCountriesByRegion = filterCountriesByRegion(selectedRegion, countriesData);
 
         // Combine the results of name and region filters if the query is not empty
-        const combinedFilteredCountries =
-          query.length >= 1
-            ? searchData.filter((country) =>
-                filteredCountriesByRegion.some(
-                  (filteredCountry) => filteredCountry.name.common === country.name.common
-                )
-              )
-            : filteredCountriesByRegion;
+        const combinedFilteredCountries = query.length >= 1
+          ? searchData.filter(country =>
+              filteredCountriesByRegion.some(filteredCountry => filteredCountry.name.common === country.name.common)
+            )
+          : filteredCountriesByRegion;
 
         setFilteredCountries(combinedFilteredCountries);
       } catch (error) {
@@ -87,54 +73,42 @@ function HomePage({ darkMode, toggleDarkMode }) {
     }, 500);
   };
 
+
   const filterFavoriteNames = (favorites, allCountries) => {
-    const favoriteCountries = allCountries.filter((country) => favorites.includes(country.code));
+    const favoriteCountries = allCountries.filter(country => favorites.includes(country.code));
     return favoriteCountries;
   };
+  
 
-  const handleFilterChange = async (region, searchData) => {
+  const handleFilterChange = (region, searchData) => {
+    console.log('Selected Region:', region);
   
-    try {
-      // Fetch countries data only once when the component mounts
-      const data = countriesData.length === 0 ? await fetchData() : countriesData;
+    if (region === 'Favorites') {
+      const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      console.log('Loaded favorites from local storage:', storedFavorites);
   
-      if (region === 'Favorites') {
-        const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        console.log('Loaded favorites from local storage:', storedFavorites);
+      //Filter country objects based on favorites
+      const favoriteCountryNames = filterFavoriteNames(storedFavorites, countriesData);
+      console.log('Favorite Countries:', favoriteCountryNames);
   
-        // Filter country objects based on favorites
-        const favoriteCountryNames = filterFavoriteNames(storedFavorites, data);
-        console.log('Favorite Countries:', favoriteCountryNames);
+      setFilteredCountries(favoriteCountryNames);
+    } else if (region === 'SearchResults') {
+      console.log('Countries:', searchData);
+      setFilteredCountries(searchData);
+    } else {
+      //Update the selected region
+      setSelectedRegion(region);
+      //Filter countries by both name and region
+      const filteredCountriesByName = filterCountries(searchQuery, countriesData);
+      const filteredCountriesByRegion = filterCountriesByRegion(region, countriesData);
   
-        setFilteredCountries(favoriteCountryNames);
-      } else if (region === 'SearchResults') {
-        console.log('Countries:', searchData);
+      const combinedFilteredCountries = filteredCountriesByName.filter((country) =>
+        filteredCountriesByRegion.includes(country)
+      );
   
-        // If there is a search query, filter the search results by the region
-        const filteredCountriesByRegion = searchData.length >= 1
-          ? filterCountriesByRegion(selectedRegion, searchData)
-          : searchData;
-  
-        setFilteredCountries(filteredCountriesByRegion);
-      } else {
-        // Update the selected region
-        // setSelectedRegion(region);
-  
-        // Filter countries by both name and region
-        const filteredCountriesByRegion = filterCountriesByRegion(region, data);
-        const filteredCountriesByName = filterCountries(searchQuery, filteredCountriesByRegion);
-  
-        setFilteredCountries(filteredCountriesByName);
-      }
-    } catch (error) {
-      // Handle error or set filtered countries to an empty array
-      console.error('Error handling filter change:', error);
-      setFilteredCountries([]);
+      setFilteredCountries(combinedFilteredCountries);
     }
   };
-  
-  
-  
   
   
   
@@ -148,35 +122,33 @@ function HomePage({ darkMode, toggleDarkMode }) {
   }, [darkMode]);
 
   useEffect(() => {
-    const initializeData = async () => {
+    const fetchData = async () => {
       try {
-        // Fetch countries data only once when the component mounts
-        const data =
-          countriesData.length === 0 ? await fetchData() : countriesData;
-
+        //Fetch countries data
+        const data = await fetchCountries();
         setCountriesData(data);
-
-        // Load favorites from local storage
+  
+        //Load favorites from local storage
         const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
         setFavorites(storedFavorites);
-
-        // Filter and set initial countries
+  
+        //Filter and set initial countries
         const initialFilteredCountries = filterCountriesByRegion(selectedRegion, data);
         setFilteredCountries(initialFilteredCountries);
-
+  
         setLoading(false);
-        // Clear any existing errors
+        //Clear any existing errors
         setError(null);
       } catch (error) {
         console.error(error);
-        // Update the error state
+        //Update the error state
         setError('Error fetching countries');
         setLoading(false);
       }
     };
-
-    initializeData();
-  }, [selectedRegion, countriesData]);
+  
+    fetchData();
+  }, [selectedRegion]);
   
 
   return (

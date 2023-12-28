@@ -53,7 +53,6 @@ const SearchBar = ({ handleFilterChange, handleSearch }) => {
             </div>
           </form>
         </nav>
-        {/* Use the RegionDropdown component here */}
         <RegionDropdown
           selectedRegion={selectedRegion}
           handleRegionChange={handleRegionChange}
